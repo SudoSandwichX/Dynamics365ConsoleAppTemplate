@@ -1,7 +1,12 @@
 ﻿using System;
-using Microsoft.Xrm.Tooling.Connector;
 using System.Security;
 using System.IO;
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Client;
+using Microsoft.Crm.Sdk.Messages;
+using System.Net;
+using System.ServiceModel.Description;
+using Microsoft.Xrm.Tooling.Connector;
 
 /// <summary>
 /// Simple console application for authenticating to Dynamics 365 (CRM).
@@ -141,6 +146,7 @@ namespace DynamicsCrmConsoleApp
             Console.ReadKey();
 
             Console.WriteLine("\nConnecting...");
+
             // CRM Connection
             CrmServiceClient conn = new CrmServiceClient(crmUserId, crmPassword, region, orgName, isOffice365: true);
 
